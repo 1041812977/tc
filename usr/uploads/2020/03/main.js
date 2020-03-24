@@ -1,33 +1,4 @@
-﻿console.log("%c 禁止调试","color:#ffffff;background-color:#7266ba;padding:10px;border-radius:20px;");
-(function noDebuger() {
-    function testDebuger() {
-        var d = new Date();
-        debugger;
-        if (new Date() - d > 10) {
-            document.body.innerHTML = '<div style="padding-top:100px;;width: 100%;height: 50px;font-size: 30px;text-align: center;font-weight: bold;">禁止调试，你咋就这么好奇呢<br/>By:Zlemoni</div>';
-            return true;
-        }
-        return false;
-    }
-    function start() {
-        while (testDebuger()) {
-            testDebuger();
-        }
-    }
-    if (!testDebuger()) {
-        window.onblur = function () {
-            setTimeout(function () {
-                start();
-            }, 500)
-        }
-    }else {
-        start();
-    }
-})();
-var host = window.location.host;
-var domain_name = "https://api."+host.split(".")[1]+"."+host.split(".")[2];
-var TagscolorArr = ["#428BCA", "#AEDCAE", "#ECA9A7", "#DA99FF", "#FFB380", "#D9B999", "#3bca6e", "#f23232", "#834e75", "#23b7e5", "#f60"]; /*标签颜色*/
-var NavColorArr = ["#FF69B4", "#58c7ea", "#E066FF", "#FF69B4", "#FFA54F", "#90EE90"];/*导航图标颜色*/
+/*导航图标颜色*/
 /* 彩色标签云*/
 function colorTags(){
     var tags = document.querySelectorAll("#tag_cloud-2 a");
